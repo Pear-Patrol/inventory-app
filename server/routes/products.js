@@ -12,4 +12,5 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+console.log('test')
 module.exports = router;
