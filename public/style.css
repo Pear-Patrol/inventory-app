@@ -1,8 +1,24 @@
 * {
-  margin: 0;
+  margin: auto;
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
 }
 img {
   width: 50px;
+}
+h1 {
+  text-align: center;
+
+}
+h2 {
+  text-align: center;
+
+}
+.card {
+  border-radius: 25px;
+  border: 2px solid #49494a;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin: 20px;
 }
