@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { Item } = require("../models");
 
-
-
 // GET /
 router.get("/", async (req, res, next) => {
   try {
@@ -30,6 +28,5 @@ router.delete("/:id", async (req,res) => {
   await products1.destroy()
   res.json(products1)
 })
-
 
 module.exports = router;
