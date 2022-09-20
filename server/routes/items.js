@@ -11,6 +11,14 @@ router.get("/", async (req, res, next) => {
     next(error);
   }
 });
+router.get('/:id', async (req, res, next) => {
+  try {
+    const product = await Item.findByPk(req.params.id);
+    res.send(product);
+  } catch (error) {
+    next(error);
+  }
+});
 router.put("/:id", async (req,res, next) => {
   await Item.update(
     req.body,
