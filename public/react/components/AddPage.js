@@ -55,6 +55,7 @@ export const AddPage = ({ setDisplayAddPage, fetchItems, fetchSauces }) => {
     return (
         <>
             <h1>Add Something!</h1>
+            <br></br>
             <form onSubmit={() => handleSubmitS()}>
                 <h2>Add Sauce</h2>
                 <input type="text" placeholder='Name'

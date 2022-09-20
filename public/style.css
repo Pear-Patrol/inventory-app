@@ -1,7 +1,6 @@
 * {
   margin: auto;
   box-sizing: border-box;
-  background-color: rgb(223, 223, 223);
 }
 img {
   width: 50px;
@@ -18,7 +17,41 @@ h2 {
   border-radius: 25px;
   border: 2px solid #49494a;
   padding: 20px;
-  width: 200px;
-  height: 150px;
+  width: 20%;
   margin: 20px;
+}
+
+/* form css */
+form {
+  width: 50%;
+
+}
+form button[type=submit]:hover {
+  background-color: #7bd853;
+}
+form div {
+  border-radius: 5px;
+  background-color: #d9dadc;
+  padding: 20px;
+}
+form input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(61, 58, 58);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button[type=submit] {
+  display: block;
+  width: 25%;
+  background-color: #52a82d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
