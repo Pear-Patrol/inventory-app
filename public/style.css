@@ -22,3 +22,38 @@ h2 {
   height: 150px;
   margin: 20px;
 }
+
+/* form css */
+form {
+  width: 50%;
+
+}
+form button[type=submit]:hover {
+  background-color: #7bd853;
+}
+form div {
+  border-radius: 5px;
+  background-color: #d9dadc;
+  padding: 20px;
+}
+form input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(61, 58, 58);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button[type=submit] {
+  display: block;
+  width: 25%;
+  background-color: #52a82d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
