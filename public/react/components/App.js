@@ -3,7 +3,8 @@ import { SaucesList } from './SaucesList';
 import { ItemList } from './ItemList';
 import { AddPage } from './AddPage';
 import { SinglePage } from './SinglePage';
-import {EditPage} from './EditPage'
+import {EditPage} from './EditPage';
+import { DeletePage } from './DeletePage';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -16,7 +17,7 @@ export const App = () => {
 	const [displaySinglePage, setDisplaySinglePage] = useState(null)
 	const [editing, setEditing] = useState(false);
 	const [toEdit, setToEdit] = useState(null)
-	console.log(toEdit)
+	const [deletePage, setDeletePage] = useState(null)
 	
 	
 
@@ -83,9 +84,9 @@ export const App = () => {
 					<AddPage setDisplayAddPage={setDisplayAddPage} fetchItems={fetchItems} fetchSauces={fetchSauces} />
 				) :
 				displaySinglePage ? (
-					<SinglePage isEditing={isEditing} displaySinglePage={displaySinglePage} setDisplaySinglePage={setDisplaySinglePage} />
+					<SinglePage isEditing={isEditing} setDeletePage={setDeletePage} displaySinglePage={displaySinglePage} setDisplaySinglePage={setDisplaySinglePage} />
 				): editing ? (<EditPage fetchSauces={fetchSauces} fetchItems={fetchItems} toEdit={toEdit} setEditing={setEditing}/>)
-					:(<>
+					:deletePage?(<DeletePage fetchSauces={fetchSauces} fetchItems={fetchItems} deletePage={deletePage} setDeletePage={setDeletePage}/>):(<>
 						<h1>Sauce Store</h1>
 						<h2>All things 🔥</h2>
 						<br></br>

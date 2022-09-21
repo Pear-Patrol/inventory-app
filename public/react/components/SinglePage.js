@@ -1,6 +1,7 @@
 import React from "react";
 
-export const SinglePage = ({ isEditing, displaySinglePage: displaySinglePage, setDisplaySinglePage: setDisplaySinglePage }) => {
+export const SinglePage = ({ isEditing, displaySinglePage: displaySinglePage, setDisplaySinglePage: setDisplaySinglePage, setDeletePage }) => {
+ 
   return (
     <>
       { displaySinglePage.title ? 
@@ -19,6 +20,7 @@ export const SinglePage = ({ isEditing, displaySinglePage: displaySinglePage, se
         alt={displaySinglePage.title || displaySinglePage.name} />
       <button onClick={() => setDisplaySinglePage(null)}>Back</button>
       <button onClick={() => isEditing(displaySinglePage)}>Edit</button>
+      <button onClick={() => {setDeletePage(displaySinglePage); setDisplaySinglePage(null)}}>Delete</button>
     </>
   );
 };
