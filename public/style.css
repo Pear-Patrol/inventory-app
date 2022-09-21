@@ -24,6 +24,7 @@ h2 {
 /* form css */
 form {
   width: 50%;
+  margin-top: 30%;
 
 }
 form button[type=submit]:hover {

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SinglePage = ({ displaySinglePage: displaySinglePage, setDisplaySinglePage: setDisplaySinglePage }) => {
+export const SinglePage = ({ isEditing, displaySinglePage: displaySinglePage, setDisplaySinglePage: setDisplaySinglePage }) => {
   return (
     <>
       { displaySinglePage.title ? 
@@ -18,6 +18,7 @@ export const SinglePage = ({ displaySinglePage: displaySinglePage, setDisplaySin
       <img src={displaySinglePage.image} 
         alt={displaySinglePage.title || displaySinglePage.name} />
       <button onClick={() => setDisplaySinglePage(null)}>Back</button>
+      <button onClick={() => isEditing(displaySinglePage)}>Edit</button>
     </>
   );
 };

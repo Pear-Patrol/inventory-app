@@ -3,6 +3,7 @@ import { SaucesList } from './SaucesList';
 import { ItemList } from './ItemList';
 import { AddPage } from './AddPage';
 import { SinglePage } from './SinglePage';
+import {EditPage} from './EditPage'
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -13,6 +14,12 @@ export const App = () => {
 	const [items, setItems] = useState([]);
 	const [displayAddPage, setDisplayAddPage] = useState(false)
 	const [displaySinglePage, setDisplaySinglePage] = useState(null)
+	const [editing, setEditing] = useState(false);
+	const [toEdit, setToEdit] = useState(null)
+	console.log(toEdit)
+	
+	
+
 
 	async function fetchSauces() {
 		try {
@@ -56,6 +63,13 @@ export const App = () => {
 			console.log("Oh no an error in fetchSingleSauce! ", err)
 		}
 	}
+	function isEditing(product){
+		setEditing(!editing);
+		setDisplaySinglePage(null)
+		setToEdit(product)
+		console.log(product)
+	}
+
 
 	useEffect(() => {
 		fetchSauces();
@@ -69,9 +83,9 @@ export const App = () => {
 					<AddPage setDisplayAddPage={setDisplayAddPage} fetchItems={fetchItems} fetchSauces={fetchSauces} />
 				) :
 				displaySinglePage ? (
-					<SinglePage displaySinglePage={displaySinglePage} setDisplaySinglePage={setDisplaySinglePage} />
-				) :
-					(<>
+					<SinglePage isEditing={isEditing} displaySinglePage={displaySinglePage} setDisplaySinglePage={setDisplaySinglePage} />
+				): editing ? (<EditPage fetchSauces={fetchSauces} fetchItems={fetchItems} toEdit={toEdit} setEditing={setEditing}/>)
+					:(<>
 						<h1>Sauce Store</h1>
 						<h2>All things 🔥</h2>
 						<br></br>
