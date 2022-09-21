@@ -59,19 +59,19 @@ export const EditPage = ({ fetchItems, fetchSauces, toEdit, setEditing}) => {
         { toEdit.title ?
          <form className='editItem'>
             <h3>Edit Item</h3>
-        <input onChange={(event) => setTitle(event.target.value)} value={undefined} defaultValue={toEdit.title} placeholder='Title'></input>
-        <input onChange={(event) => setPrice(event.target.value)} value={undefined} defaultValue={toEdit.price} placeholder='Price'></input>
-        <input onChange={(event) => setDescription(event.target.value)} value={undefined} defaultValue={toEdit.description} placeholder='description'></input>
-        <input onChange={(event) => setCategory(event.target.value)} value={undefined} defaultValue={toEdit.category} placeholder='category'></input>
-        <input onChange={(event) => setImage(event.target.value)} value={undefined} defaultValue={toEdit.image} placeholder='image'></input>
+        <input onChange={(event) => setTitle(event.target.value)} value={title} defaultValue={toEdit.title} placeholder='Title'></input>
+        <input onChange={(event) => setPrice(event.target.value)} value={price} defaultValue={toEdit.price} placeholder='Price'></input>
+        <input onChange={(event) => setDescription(event.target.value)} value={description} defaultValue={toEdit.description} placeholder='description'></input>
+        <input onChange={(event) => setCategory(event.target.value)} value={category} defaultValue={toEdit.category} placeholder='category'></input>
+        <input onChange={(event) => setImage(event.target.value)} value={image} defaultValue={toEdit.image} placeholder='image'></input>
         <button onClick={() => handleSubmitItem(toEdit.id)} type='button'> Edit Item</button>
         <button onClick={() => {setEditing(false)}}>Back</button>
         </form>
         :
          <form className='editSauce'>
             <h3>Edit Item</h3>
-        <input onChange={(event) => setName(event.target.value)} value={undefined} defaultValue={toEdit.name} placeholder='Name'></input>
-        <input onChange={(event) => setImage(event.target.value)} value={undefined} defaultValue={toEdit.image} placeholder='Image'></input>
+        <input onChange={(event) => setName(event.target.value)} value={name} defaultValue={toEdit.name} placeholder='Name'></input>
+        <input onChange={(event) => setImage(event.target.value)} value={image} defaultValue={toEdit.image} placeholder='Image'></input>
         <button onClick={() => handleSubmitSauce(toEdit.id)} type='button'> Edit Item</button>
         <button onClick={() => {setEditing(false)}}>Back</button>
         </form>
