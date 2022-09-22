@@ -5,6 +5,7 @@ import { AddPage } from './AddPage';
 import { SinglePage } from './SinglePage';
 import {EditPage} from './EditPage';
 import { DeletePage } from './DeletePage';
+import {Sidebar} from './Sidebar';
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
@@ -19,8 +20,6 @@ export const App = () => {
 	const [toEdit, setToEdit] = useState(null)
 	const [deletePage, setDeletePage] = useState(null)
 	
-	
-
 
 	async function fetchSauces() {
 		try {
@@ -79,6 +78,10 @@ export const App = () => {
 
 	return (
 		<main>
+			<div>
+				<Sidebar />
+			</div>
+			<div className='main'>
 			{
 				displayAddPage ? (
 					<AddPage setDisplayAddPage={setDisplayAddPage} fetchItems={fetchItems} fetchSauces={fetchSauces} />
@@ -87,13 +90,12 @@ export const App = () => {
 					<SinglePage isEditing={isEditing} setDeletePage={setDeletePage} displaySinglePage={displaySinglePage} setDisplaySinglePage={setDisplaySinglePage} />
 				): editing ? (<EditPage fetchSauces={fetchSauces} fetchItems={fetchItems} toEdit={toEdit} setEditing={setEditing}/>)
 					:deletePage?(<DeletePage fetchSauces={fetchSauces} fetchItems={fetchItems} deletePage={deletePage} setDeletePage={setDeletePage}/>):(<>
-						<h1>Sauce Store</h1>
-						<h2>All things 🔥</h2>
-						<br></br>
 						<SaucesList sauces={sauces} fetchSingleSauce={fetchSingleSauce}/>
 						<ItemList items={items} fetchSingleItem={fetchSingleItem}/>
 						<button onClick={()=>setDisplayAddPage(true)}>Add Something!</button>
 					</>)}
+			</div>
+			
 		</main>
 	)
 }
